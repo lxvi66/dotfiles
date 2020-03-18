@@ -14,3 +14,5 @@ Kitty ( ? possibly optional )
 Picom ( Compton fork )
 
 Polybar ( Optional )
+
+MPD + MPC ( For Music Control )
