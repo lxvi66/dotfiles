@@ -31,5 +31,7 @@ python-pywal
 
 polybar (second screenshot, pkill/launch hotkeys in sxhkdrc)
 
+kitty
 
+sl
 
