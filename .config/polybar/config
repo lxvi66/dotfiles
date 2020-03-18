@@ -243,19 +243,16 @@ format-padding = 1
 type = custom/text
 content = 
 click-left = mpc prev
-;click-right = "/bin/bash $HOME/bin/mpvctl -b "
 
 [module/play_pause]
 type = custom/text
 content = 
 click-left = mpc toggle
-;click-right = "/bin/bash $HOME/bin/mpvctl -q "
 
 [module/next]
 type = custom/text
 content = 
 click-left = mpc next
-click-right = "/bin/bash $HOME/bin/mpvctl -f "
 
 [module/mpv]
 type = custom/script
