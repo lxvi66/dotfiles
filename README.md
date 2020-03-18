@@ -3,13 +3,14 @@ Muh Dotfiles
 
 ![scrot](images/scrot/2020-03-18-135835_2560x1440_scrot.png)
 
-Requirements:
+**Requirements:**
 
-BSPWM ( With rounded corner patch)
+BSPWM ( With rounded corner patch )
 
-SXHKD ( BSPWM Keyboard Daemon)
+SXHKD ( BSPWM Keyboard Daemon )
 
-Kitty (? possibly optional)
+Kitty ( ? possibly optional )
 
-Picom (compton fork)
+Picom ( Compton fork )
 
+Polybar ( Optional )
