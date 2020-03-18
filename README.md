@@ -1,4 +1,4 @@
 # dotfiles
 Muh Dotfiles
 
-![Picture](https://imgur.com/a/95h7mWc)
+![Picture](2020-03-18-135835_2560x1440_scrot.png)
