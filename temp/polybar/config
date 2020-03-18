@@ -31,7 +31,6 @@ font-0 = Hack Nerd Font:size=15;3
 font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
 font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
-font-4 = Roboto Mono:size=14;3
 
 ;--------;
 ; COLORS ;
@@ -50,9 +49,9 @@ padding-left = 2
 padding-right = 2
 module-margin = 1.5
 
-modules-left = volume mpd
+modules-left = volume discord prev play_pause next
 modules-center = bspwm
-modules-right = wlan time discord
+modules-right = mpv wlan time
 
 tray-position = none
 tray-detached = true
@@ -88,14 +87,14 @@ ws-icon-default = " "
 
 format = <label-state>
 
-label-focused = 
+label-focused = 
 label-focused-padding = 1.5
 
-label-occupied =  
+label-occupied = 
 label-occupied-padding = 1.5
 
 
-label-urgent =  
+label-urgent = 
 label-urgent-padding = 1.5
 
 
@@ -108,12 +107,15 @@ label-empty-padding = 1.5
 ;label-separator-padding = 10
 ;label-separator-foreground = #ffb52a
 
+
+
+
 [module/time]
 type = internal/date
-label-font = 5 
+
 interval = 1.0
 
-date =   %H:%M
+date =  %H:%M
 
 [module/date]
 type = internal/date
@@ -148,10 +150,8 @@ ramp-capacity-4 = 
 [module/volume]
 type = internal/volume
 
-format-volume = <ramp-volume>  <label-volume>
-format-muted =   muted
-
-label-volume-font = 5
+format-volume = <ramp-volume> <label-volume>
+format-muted =  muted
 
 ramp-volume-0 = 
 ramp-volume-1 = 
@@ -160,19 +160,18 @@ ramp-volume-2 = 
 [module/mpd]
 type = internal/mpd
 
-;label-offline = mpd is offline
-format-online =  <icon-prev>  <toggle>  <icon-next>   <label-song>
-;format-offline = <label-offline>
+label-offline = mpd is offline
+format-online = <icon-prev> <toggle> <icon-next> <label-song>
+format-offline = <label-offline>
 host = 127.0.0.1
 port = 6600
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
 
-label-song-font = 5
-label-song-maxlen = 100
+label-song-maxlen = 25
 label-song-ellipsis = true
 
 bar-progress-width = 10
@@ -226,17 +225,16 @@ type = custom/menu
 
 format-spacing = 1
 
-label-open-font = 5 
-label-open = You're Cute~
+label-open = 
 label-close = 
 label-separator = |
 
 
-menu-0-0 = Telegram
+menu-0-0 = TG
 menu-0-0-exec = telegram-desktop &
-menu-0-1 = Discord
+menu-0-1 = DSCRD
 menu-0-1-exec = Discord &
-menu-0-2 = Kill
+menu-0-2 = KILL
 menu-0-2-exec = killall Discord | killall Discord | killall telegram-deskto
 
 format-padding = 1
