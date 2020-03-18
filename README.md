@@ -20,11 +20,16 @@ MPD + MPC ( For Music Control )
 # Themes
 Mountains
 ![scrot](images/scrot/2020-03-18-135835_2560x1440_scrot.png)
-**Apps in screenshot**:
+![scrot](images/scrot/2020-03-18-210354_2560x1440_scrot.png)
+**Apps in screenshot(s)**:
 
 ncmpcpp
 
 colorpanes
+
+python-pywal 
+
+polybar (second screenshot, pkill/launch hotkeys in sxhkdrc)
 
 
 
