@@ -1,0 +1,65 @@
+# terminal
+super + Return
+	kitty	
+#rofi
+super + d
+	rofi -show run
+#browser
+super + b
+	firefox
+
+#emoji list 
+super + i
+	rofimoji
+
+# send a notif of the time and battery
+super + t
+	notify-send "$(date "+%F (%a) - %H:%M")" \
+	"$(acpi)"
+
+#music player
+alt + grave
+	kitty ncmpcpp
+
+#media controls
+super + {less, greater, slash}
+	mpc {prev, next, toggle}
+
+#volume
+super + {y,u}
+	{pactl set-sink-volume @DEFAULT_SINK@ +5%,pactl set-sink-volume @DEFAULT_SINK@ -5%}
+
+#pavu
+super + shift + p 
+	pavucontrol
+
+#screenshot
+Print
+	$TERMINAL flameshot gui
+
+#screenshot focused monitor
+Super + Print 
+	$terminal flameshot screen
+#hide polybar
+super + j
+	xdo show -N polybar
+
+#show polybar 
+super + h
+	xdo show -N polybar
+
+#ad-free spufu
+alt + s 
+	LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify
+
+#enable polybar 
+alt + b 
+	polybar -r white
+
+#hide/kill polybar
+alt + shift + b
+	$terminal pkill polybar
+
+#scrot
+alt + shift + s
+	scrot

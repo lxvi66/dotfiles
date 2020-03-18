@@ -1,0 +1,61 @@
+#!/bin/sh
+#
+#  bspwmrc
+#
+
+
+# desktops
+bspc monitor -d             1 2 3 4 5 6
+bspc monitor DVI-D-0 -d     7 8 9 10
+#bspc config top_padding              26
+bspc config border_radius 10
+
+_() { bspc config "$@"; }
+
+# mouse
+xsetroot -cursor_name       left_ptr
+_ pointer_modifier          mod4
+_ pointer_motion_interval   10
+
+_ focus_follows_pointer     true
+_ pointer_follows_focus     false
+
+
+# borders/gaps
+_ window_gap                40
+_ gapless_monocle           false
+
+_ border_width              0
+_ borderless_monocle        true
+_ normal_border_color       "#19191C"
+_ focused_border_color      "#202026"
+
+
+# other
+_ single_monocle            true
+
+
+#
+#   rules
+#
+bspc rule -a feh            state=floating
+bspc rule -a tabbed         state=floating
+bspc rule -a Gcolor3        state=floating
+bspc rule -a kitty          state=floating
+
+#
+#   autostart
+#
+borders &
+pkill picom
+pkill dunst
+pkill sxhkd
+
+sleep 0.1
+
+picom &
+dunst &
+sxhkd &
+sxhkd -c ${XDG_CONFIG_HOME:-~/.config}/sxhkd/bspwm &
+mpd
+
