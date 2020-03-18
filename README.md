@@ -21,7 +21,9 @@ MPD + MPC ( For Music Control )
 Mountains
 ![scrot](images/scrot/2020-03-18-135835_2560x1440_scrot.png)
 **Apps in screenshot**:
+
 ncmpcpp
+
 colorpanes
 
 
