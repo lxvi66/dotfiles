@@ -1,30 +1,46 @@
+                       ▄▄        ▄▄              ▄▄                     
+#                      ██        ██              ██                     
+#  ▄▄█████▄  ▀██  ██▀  ██▄████▄  ██ ▄██▀    ▄███▄██   ██▄████   ▄█████▄ 
+#  ██▄▄▄▄ ▀    ████    ██▀   ██  ██▄██     ██▀  ▀██   ██▀      ██▀    ▀ 
+#   ▀▀▀▀██▄    ▄██▄    ██    ██  ██▀██▄    ██    ██   ██       ██       
+#  █▄▄▄▄▄██   ▄█▀▀█▄   ██    ██  ██  ▀█▄   ▀██▄▄███   ██       ▀██▄▄▄▄█ 
+#   ▀▀▀▀▀▀   ▀▀▀  ▀▀▀  ▀▀    ▀▀  ▀▀   ▀▀▀    ▀▀▀ ▀▀   ▀▀         ▀▀▀▀
+
+# close app
 super + q
 	bspc node -c
 
+# switch to tiled
 super + t
 	bspc desktop -l tiled
 
+# end X sesion
 alt + shift + Escape
 	bspc quit
 
+# restart BSPWM & SXHKD
 super + shift + Escape
 	bspc wm -r
 
 super + {c,f}
 	bspc node -t "~{floating,fullscreen}"
 
+# switch worspaces
 ctrl + alt + {d,a}
 	bspc desktop -f {next,prev}; \
 	nottop
 
+# move workspaces
 super + shift + {1-9,0}
 	bspc node -d {1-9,10} && \
 	nottop a
 
+# switch WS by number
 super + {1-9,0}
 	bspc desktop -f {1-9,10}; \
 	nottop
 
+# switch app
 alt {_,shift} + Tab
 	bspc node -f {next, prev};
 
@@ -32,6 +48,38 @@ alt {_,shift} + Tab
 super + {_,shift + }{Left,Down,Up,Right}
         bspc node -{f,s} {west,south,north,east}
 
-# Change Window Size
+# change window size
 alt + {Left,Down,Up,Right}
         bspc node -z {right -20 0,bottom 0 20,bottom 0 -20,right 20 0}
+
+# preselect the direction
+super + ctrl + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+alt + shift + {minus,equal}
+	bspc config -d focused right_padding $((`bspc config -d focused right_padding` {+,-} 20 )); \
+	bspc config -d focused left_padding $((`bspc config -d focused left_padding` {+,-} 20 )); \
+	bspc config -d focused bottom_padding $((`bspc config -d focused bottom_padding` {+,-} 20 )); \
+	bspc config -d focused top_padding $((`bspc config -d focused top_padding` {+,-} 20 ));
+
+# Change desktop padding
+super + {_, shift} + bracketright
+	bspc config -d focused right_padding $((`bspc config -d focused right_padding` {+,-} 20 ))
+
+super + {_, shift} + bracketleft
+	bspc config -d focused left_padding $((`bspc config -d focused left_padding` {+,-} 20 ))
+
+ctrl + {_, shift} + bracketright
+	bspc config -d focused bottom_padding $((`bspc config -d focused bottom_padding` {+,-} 20 ))
+
+ctrl + {_, shift} + bracketleft
+	bspc config -d focused top_padding $((`bspc config -d focused top_padding` {+,-} 20 ))
+

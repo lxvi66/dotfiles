@@ -40,13 +40,6 @@ Print
 #screenshot focused monitor
 Super + Print 
 	$terminal flameshot screen
-#hide polybar
-super + j
-	xdo show -N polybar
-
-#show polybar 
-super + h
-	xdo show -N polybar
 
 #ad-free spufu
 alt + s 
@@ -58,7 +51,7 @@ alt + b
 
 #hide/kill polybar
 alt + shift + b
-	$terminal pkill polybar
+	$terminal pkill polybar && bspc config top_padding 02
 
 #scrot
 alt + shift + s

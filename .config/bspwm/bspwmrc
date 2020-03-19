@@ -6,7 +6,7 @@
 
 # desktops
 bspc monitor -d             1 2 3 4 5 6
-#bspc config top_padding              26
+
 bspc config border_radius 10
 
 _() { bspc config "$@"; }
@@ -62,7 +62,7 @@ sxhkd -c ${XDG_CONFIG_HOME:-~/.config}/sxhkd/bspwm &
 mpd
 wal -R
 #might need to enable this if you have an nvidia dGPU and are experiencing problems (the line below)
-#nvidia-settings -l
+nvidia-settings -l
 $TERMINAL picom --config /home/lxvi/.config/picom/picom.conf 
 
 # source the colors.
